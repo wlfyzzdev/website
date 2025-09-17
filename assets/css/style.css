@@ -287,12 +287,6 @@ html, body {
   margin: 0;
 }
 
-/* Default: mobile/other devices — no special styling */
-.centered-main {
-  /* nothing applied */
-}
-
-/* Desktop only */
 @media (min-width: 1024px) {
   .centered-main {
     display: flex;
