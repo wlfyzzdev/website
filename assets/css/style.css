@@ -287,13 +287,23 @@ html, body {
   margin: 0;
 }
 
+/* Default: mobile/other devices — no special styling */
 .centered-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  transform: translateY(-40px); /* adjust this value up/down */
+  /* nothing applied */
 }
+
+/* Desktop only */
+@media (min-width: 1024px) {
+  .centered-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    transform: translateY(-40px); /* adjust as needed */
+  }
+}
+
+
 
 .content-card::before {
   content: "";
