@@ -333,8 +333,15 @@ main {
 
 .avatar-box {
   background: var(--bg-gradient-onyx);
-  border-radius: 20px;
+  border-radius: 50%;
 }
+.avatar-img {
+  width: 100%;       /* makes it fill the box */
+  height: 100%;      /* keeps proportions if you add object-fit */
+  object-fit: cover; /* prevents stretching */
+  border-radius: 50%; /* makes it round */
+}
+
 
 .info-content .name {
   color: var(--white-2);
