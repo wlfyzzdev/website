@@ -282,6 +282,18 @@ article.active {
   cursor: pointer;
   z-index: 1;
 }
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.centered-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  transform: translateY(-40px); /* adjust this value up/down */
+}
 
 .content-card::before {
   content: "";
