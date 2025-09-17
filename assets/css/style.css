@@ -332,7 +332,7 @@ main {
 }
 
 .avatar-box {
-  width: 140px;/* bigger default size for PC */
+  width: 140px;   /* default desktop size */
   height: 140px;
   border-radius: 50%;
   overflow: hidden;
@@ -349,8 +349,8 @@ main {
 
 @media (max-width: 600px) {
   .avatar-box {
-    width: 60px;   /* smaller on mobile */
-    height: 60px;
+    width: 80px;   /* smaller on mobile */
+    height: 80px;
   }
 }
 
