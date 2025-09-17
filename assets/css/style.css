@@ -334,25 +334,25 @@ main {
 .avatar-box {
   background: var(--bg-gradient-onyx);
   border-radius: 50%;
-}
-.avatar-img {
-  width: 100%;       /* makes it fill the box */
-  height: 100%;      /* keeps proportions if you add object-fit */
-  object-fit: cover; /* prevents stretching */
-  border-radius: 50%; /* makes it round */
-}
-.avatar-img img {
-  width: 80px;
+  width: 80px;   /* default desktop size */
   height: 80px;
-  border-radius: 50%; /* if you want it rounded */
+  overflow: hidden; /* keeps image contained in circle */
+}
+
+.avatar-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 @media (max-width: 600px) {
-  .avatar-img img {
-    width: 50px;
+  .avatar-box {
+    width: 50px;  /* smaller size on mobile */
     height: 50px;
   }
 }
+
 
 
 
