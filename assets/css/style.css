@@ -321,6 +321,7 @@ main {
   margin: 15px 12px;
   margin-bottom: 75px;
   min-width: 259px;
+  min-height: 100vh;
 }
 
 
@@ -1727,7 +1728,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .main-content {
     position: relative;
-    width: max-content;
+    width: 950px;
     margin: auto;
   }
 
@@ -1846,7 +1847,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     margin-inline: auto;
     display: flex;
     justify-content: center;
-    align-items: stretch;
+    align-items: flex-start;
     gap: 25px;
   }
 
@@ -1854,6 +1855,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     min-width: 75%;
     width: 75%;
     margin: 0;
+    flex-shrink: 0;
   }
 
 
@@ -1866,10 +1868,12 @@ textarea.form-input::-webkit-resizer { display: none; }
     position: sticky;
     top: 60px;
     max-height: max-content;
-    height: 100%;
     margin-bottom: 0;
     padding-top: 60px;
     z-index: 1;
+    width: 22%;
+    min-width: 280px;
+    flex-shrink: 0;
   }
 
   .sidebar-info { flex-direction: column; }
