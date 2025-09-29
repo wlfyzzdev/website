@@ -1,0 +1,11 @@
+[
+  {
+    "slug": "welcome",
+    "file": "welcome.md",
+    "title": "Welcome to my blog",
+    "date": "2025-09-28",
+    "category": "Welcome",
+    "excerpt": "This is where I share my thoughts on web development, technology trends, and my journey as a student.",
+    "image": "blog-welcome.jpg"
+  }
+]

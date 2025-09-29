@@ -6,13 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- SEO Meta Tags -->
   <meta name="description" content="wlfyzz.dev - Web Developer and Digital Technology Student specializing in modern web development. Currently studying Digital Technology & IT while building experience through personal projects.">
   <meta name="keywords" content="web developer, web development, frontend developer, HTML, CSS, JavaScript, digital technology, portfolio, wlfyzz">
   <meta name="author" content="wlfyzz">
   <meta name="robots" content="index, follow">
   
-  <!-- Open Graph Meta Tags (Social Media) -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Jai - Web Developer Portfolio">
   <meta property="og:description" content="Web Developer and Digital Technology Student specializing in modern web development. View my portfolio and get in touch for collaborations.">
@@ -23,33 +21,22 @@
   <meta property="og:image:height" content="630">
   <meta property="og:locale" content="en_US">
   
-  <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Jai - Web Developer Portfolio">
   <meta name="twitter:description" content="Web Developer and Digital Technology Student specializing in modern web development. View my portfolio and get in touch for collaborations.">
   <meta name="twitter:image" content="https://wlfyzz.dev/assets/images/avatar.png">
   <meta name="twitter:creator" content="@wlfyzzdev">
   
-  <!-- Additional Meta Tags -->
   <meta name="theme-color" content="#ffdb70">
   <meta name="msapplication-TileColor" content="#ffdb70">
   <meta name="application-name" content="wlfyzz.dev">
   
   <title>wlfyzz.dev - Web Developer Portfolio</title>
 
-  <!--
-    - favicon
-  -->
   <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
 
-  <!--
-    - custom css link
-  -->
   <link rel="stylesheet" href="./assets/css/style.css">
 
-  <!--
-    - google font link
-  -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -57,15 +44,7 @@
 
 <body>
 
-  <!--
-    - #MAIN
-  -->
-
 <main class="centered-main">
-
-    <!--
-      - #SIDEBAR
-    -->
 
     <aside class="sidebar" data-sidebar>
 
@@ -164,19 +143,7 @@
 
     </aside>
 
-
-
-
-
-    <!--
-      - #main-content
-    -->
-
     <div class="main-content">
-
-      <!--
-        - #NAVBAR
-      -->
 
       <nav class="navbar">
 
@@ -191,10 +158,6 @@
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
-          </li>
-
-          <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Blog</button>
           </li>
 
@@ -202,14 +165,6 @@
         </ul>
 
       </nav>
-
-
-
-
-
-      <!--
-        - #ABOUT
-      -->
 
       <article class="about  active" data-page="about">
 
@@ -232,11 +187,6 @@
             message and identity in the most creative way. I created web design for many famous brand companies.
           </p>
         </section>
-
-
-        <!--
-          - service
-        -->
 
         <section class="service">
 
@@ -279,33 +229,8 @@
           </ul>
 
         </section>
-        <!-- <div class="testimonials">
-          <h3 class="h3 testimonials-title">Testimonials</h3>
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <h4 class="h4" data-testimonials-title>Test</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-Lorep ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac est massa. Pellentesque a nunc vel diam auctor commodo. Nulla facilisi.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-             -->
-       
+        
       </article>
-
-
-
-
-
-      <!--
-        - #RESUME
-      -->
 
       <article class="resume" data-page="resume">
 
@@ -367,16 +292,6 @@ Lorep ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac est massa. Pe
 
           <ol class="timeline-list">
 
-            <!-- Add your work experience here when you have some
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Job Title</h4>
-              <span>Start Date — End Date</span>
-              <p class="timeline-text">
-                Description of your role and achievements.
-              </p>
-            </li>
-            -->
-
             <li class="timeline-item">
               <h4 class="h4 timeline-item-title">Currently Building Experience</h4>
               <span>2025 — Present</span>
@@ -407,19 +322,6 @@ Lorep ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac est massa. Pe
         - #PORTFOLIO
       -->
 
-      <article class="portfolio" data-page="portfolio">
-
-        <header>
-          <h2 class="h2 article-title">Portfolio</h2>
-
-                        <p class="timeline-text">
-                          Coming soon...
-              </p>
-        </header>
-        
-
-      </article>
-
 
 
 
@@ -432,38 +334,51 @@ Lorep ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac est massa. Pe
 
         <header>
           <h2 class="h2 article-title">Blog</h2>
-
-                                  <p class="timeline-text">
-                          Coming soon...
-              </p>
         </header>
 
         <section class="blog-posts">
+
+          <ul class="blog-posts-list" data-blog-posts-list>
+            <!-- Blog posts will be dynamically loaded here -->
+          </ul>
+
         </section>
 
       </article>
-
-
-
-
 
     </div>
 
   </main>
 
+  <div class="modal-container" data-modal-container>
 
+    <div class="overlay" data-overlay></div>
 
+    <section class="blog-modal">
 
+      <button class="modal-close-btn" data-modal-close-btn>
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
 
+      <div class="modal-content">
+        <header class="blog-modal-header">
+          <h2 class="blog-modal-title" data-modal-title></h2>
+          <div class="blog-modal-meta" data-modal-meta></div>
+        </header>
+        
+        <div class="blog-modal-text" data-modal-text></div>
+      </div>
 
-  <!--
-    - custom js link
-  -->
+    </section>
+
+  </div>
+
   <script src="./assets/js/script.js"></script>
 
-  <!--
-    - ionicon link
-  -->
+  <script src="./assets/js/blog.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
