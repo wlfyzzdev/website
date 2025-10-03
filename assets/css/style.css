@@ -2111,6 +2111,98 @@ textarea.form-input::-webkit-resizer { display: none; }
 	 * RESUME
 	 */
 
-  .timeline-text { max-width: 700px; }
+    .timeline-text { max-width: 700px; }
+}
+
+/*-----------------------------------*\
+  #URL ROUTING ENHANCEMENTS
+\*-----------------------------------*/
+
+/* Smooth page transitions */
+[data-page] {
+  transition: opacity var(--transition-1), transform var(--transition-1);
+}
+
+[data-page]:not(.active) {
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+}
+
+[data-page].active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Enhanced navigation link states */
+.navbar-link {
+  position: relative;
+  transition: all var(--transition-1);
+}
+
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--orange-yellow-crayola);
+  border-radius: 2px;
+  transform: translateX(-50%);
+  transition: width var(--transition-1);
+}
+
+.navbar-link.active::after {
+  width: 100%;
+}
+
+/* Blog post URL indication */
+.blog-post-link {
+  position: relative;
+  transition: all var(--transition-1);
+}
+
+.blog-post-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* URL bar friendly styling */
+.blog-modal-header {
+  position: sticky;
+  top: 0;
+  background: var(--eerie-black-2);
+  z-index: 2;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--jet);
+  margin-bottom: 20px;
+}
+
+/* Loading state for URL navigation */
+.page-loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.page-loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--orange-yellow-crayola);
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
 
 }

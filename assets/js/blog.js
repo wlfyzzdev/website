@@ -9,6 +9,7 @@ class BlogManager {
     this.modalText = document.querySelector('[data-modal-text]');
     
     this.isMarkedLoaded = typeof marked !== 'undefined';
+    this.posts = [];
     
     this.init();
   }
@@ -20,6 +21,7 @@ class BlogManager {
     
     await this.loadBlogPosts();
     this.setupModalEvents();
+    this.setupRouterEvents();
   }
 
   waitForMarked() {
@@ -42,9 +44,9 @@ class BlogManager {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-      const posts = await response.json();
+      this.posts = await response.json();
       
-      this.renderBlogPosts(posts);
+      this.renderBlogPosts(this.posts);
     } catch (error) {
       console.error('Error loading blog posts:', error);
       this.showErrorMessage('Error loading blog posts: ' + error.message);
@@ -94,7 +96,7 @@ class BlogManager {
     const link = li.querySelector('.blog-post-link');
     link.addEventListener('click', (e) => {
       e.preventDefault();
-      this.loadBlogPost(post);
+      this.openBlogPost(post);
     });
 
     return li;
@@ -133,6 +135,14 @@ class BlogManager {
     const div = document.createElement('div');
     div.textContent = text;
     return div.innerHTML;
+  }
+
+  openBlogPost(post) {
+    // Update URL when opening blog post
+    if (window.router) {
+      window.router.navigateToBlogPost(post.file);
+    }
+    this.loadBlogPost(post);
   }
 
   showBlogModal(post, content) {
@@ -195,6 +205,29 @@ class BlogManager {
       this.overlay.classList.remove('active');
     }
     document.body.style.overflow = '';
+    
+    // Update URL to remove file parameter when closing modal
+    if (window.router) {
+      window.router.updateURL('blog');
+      window.router.currentBlogPost = null;
+    }
+  }
+
+  setupRouterEvents() {
+    // Listen for router events to load specific blog posts
+    document.addEventListener('loadBlogPost', (e) => {
+      const { filename } = e.detail;
+      this.loadBlogPostByFilename(filename);
+    });
+  }
+
+  loadBlogPostByFilename(filename) {
+    const post = this.posts.find(p => p.file === filename);
+    if (post) {
+      this.loadBlogPost(post);
+    } else {
+      console.error(`Blog post not found: ${filename}`);
+    }
   }
 
   formatDate(dateString) {
