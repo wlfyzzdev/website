@@ -10,7 +10,6 @@ class BlogManager {
     
     this.isMarkedLoaded = typeof marked !== 'undefined';
     this.posts = [];
-    
     this.init();
   }
 
@@ -229,6 +228,8 @@ class BlogManager {
       console.error(`Blog post not found: ${filename}`);
     }
   }
+
+
 
   formatDate(dateString) {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
